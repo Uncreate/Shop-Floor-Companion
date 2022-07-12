@@ -1,0 +1,1075 @@
+"Maintenance_Detail As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+    Fill: =RGBA(234, 234, 234, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+
+    ScreenContainer12 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer1_18 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =1
+
+            Icon3_17 As icon.Home:
+                AlignInContainer: =AlignInContainer.Stretch
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(244, 244, 244, 1)
+                Icon: =Icon.Home
+                OnSelect: =Navigate(HomeScreen,ScreenTransition.None)
+                ZIndex: =1
+
+            Label1_18 As label:
+                Align: =Center
+                AlignInContainer: =AlignInContainer.Stretch
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FillPortions: =1
+                FontWeight: =Bold
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =If(Self.Size>2,"Essai Shop Floor Companion","Essai SFC")
+                ZIndex: =2
+
+            Icon2_17 As icon.Reload:
+                AlignInContainer: =AlignInContainer.Stretch
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(244, 244, 244, 1)
+                Icon: =Icon.BackArrow
+                OnSelect: =Back(ScreenTransition.None)
+                ZIndex: =5
+
+        MainSectionContainer11 As groupContainer.verticalAutoLayoutContainer:
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            FormViewer1 As formViewer:
+                BorderColor: =RGBA(89, 0, 0, 1)
+                DataSource: =Equipment_List
+                Item: =Gallery2.Selected
+                LayoutMinHeight: =250
+                LayoutMinWidth: =0
+                NumberOfColumns: =4
+                ZIndex: =1
+
+                Title_DataCard1 As typedDataCard.textualViewCard:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="Title"
+                    Default: =ThisItem.Title
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"Title")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                    DataCardKey4 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: ="Machine Number"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue4 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                        ZIndex: =2
+
+                "'M. MODEL_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_1"
+                    Default: =ThisItem.'M. MODEL'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_1")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =1
+                    Y: =0
+                    ZIndex: =2
+
+                    DataCardKey8 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue8 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey8.Y + DataCardKey8.Height + 5
+                        ZIndex: =2
+
+                "'S/N_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_2"
+                    Default: =ThisItem.'S/N'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_2")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =2
+                    Y: =0
+                    ZIndex: =2
+
+                    DataCardKey12 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue13 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey12.Y + DataCardKey12.Height + 5
+                        ZIndex: =2
+
+                DATE_DataCard1 As typedDataCard.textualViewCard:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_3"
+                    Default: =ThisItem.DATE
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_3")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =3
+                    Y: =0
+                    ZIndex: =2
+
+                    DataCardKey13 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue20 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey13.Y + DataCardKey13.Height + 5
+                        ZIndex: =2
+
+                "'M. TYPE_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_4"
+                    Default: =ThisItem.'M. TYPE'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_4")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =0
+                    Y: =1
+                    ZIndex: =2
+
+                    DataCardKey20 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue21 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey20.Y + DataCardKey20.Height + 5
+                        ZIndex: =2
+
+                "'M. TRAVEL X_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_5"
+                    Default: =ThisItem.'M. TRAVEL X'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_5")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =1
+                    Y: =1
+                    ZIndex: =2
+
+                    DataCardKey21 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue22 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey21.Y + DataCardKey21.Height + 5
+                        ZIndex: =2
+
+                "'M. TRAVEL Y_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_6"
+                    Default: =ThisItem.'M. TRAVEL Y'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_6")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =2
+                    Y: =1
+                    ZIndex: =2
+
+                    DataCardKey22 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue24 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey22.Y + DataCardKey22.Height + 5
+                        ZIndex: =2
+
+                "'M. TRAVEL Z_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_7"
+                    Default: =ThisItem.'M. TRAVEL Z'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_7")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =3
+                    Y: =1
+                    ZIndex: =2
+
+                    DataCardKey23 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue25 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey23.Y + DataCardKey23.Height + 5
+                        ZIndex: =2
+
+                "'T. POCKETS_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_8"
+                    Default: =ThisItem.'T. POCKETS'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_8")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =0
+                    Y: =2
+                    ZIndex: =2
+
+                    DataCardKey24 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue26 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey24.Y + DataCardKey24.Height + 5
+                        ZIndex: =2
+
+                SOFTWARE_DataCard1 As typedDataCard.textualViewCard:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_9"
+                    Default: =ThisItem.SOFTWARE
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_9")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =1
+                    Y: =2
+                    ZIndex: =2
+
+                    DataCardKey27 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue43 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey27.Y + DataCardKey27.Height + 5
+                        ZIndex: =2
+
+                Controller_DataCard1 As typedDataCard.textualViewCard:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_10"
+                    Default: =ThisItem.Controller
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_10")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =2
+                    Y: =2
+                    ZIndex: =2
+
+                    DataCardKey40 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue44 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey40.Y + DataCardKey40.Height + 5
+                        ZIndex: =2
+
+                SIK_DataCard1 As typedDataCard.textualViewCard:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_11"
+                    Default: =ThisItem.SIK
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_11")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =3
+                    Y: =2
+                    ZIndex: =2
+
+                    DataCardKey41 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue45 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey41.Y + DataCardKey41.Height + 5
+                        ZIndex: =2
+
+                "'NC VERSION_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_12"
+                    Default: =ThisItem.'NC VERSION'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_12")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =0
+                    Y: =3
+                    ZIndex: =2
+
+                    DataCardKey46 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue46 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey46.Y + DataCardKey46.Height + 5
+                        ZIndex: =2
+
+                "'PLC VERSION_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_13"
+                    Default: =ThisItem.'PLC VERSION'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_13")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =1
+                    Y: =3
+                    ZIndex: =2
+
+                    DataCardKey47 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue47 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey47.Y + DataCardKey47.Height + 5
+                        ZIndex: =2
+
+                DNC_DataCard1 As typedDataCard.textualViewCard:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_14"
+                    Default: =ThisItem.DNC
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_14")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =2
+                    Y: =3
+                    ZIndex: =2
+
+                    DataCardKey48 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue48 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey48.Y + DataCardKey48.Height + 5
+                        ZIndex: =2
+
+                "'SOFLEX VERSION_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_15"
+                    Default: =ThisItem.'SOFLEX VERSION'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_15")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =3
+                    Y: =3
+                    ZIndex: =2
+
+                    DataCardKey49 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue49 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey49.Y + DataCardKey49.Height + 5
+                        ZIndex: =2
+
+                CPU_DataCard1 As typedDataCard.textualViewCard:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_16"
+                    Default: =ThisItem.CPU
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_16")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =0
+                    Y: =4
+                    ZIndex: =2
+
+                    DataCardKey50 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue50 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey50.Y + DataCardKey50.Height + 5
+                        ZIndex: =2
+
+                RAM_DataCard1 As typedDataCard.textualViewCard:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_17"
+                    Default: =ThisItem.RAM
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_17")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =1
+                    Y: =4
+                    ZIndex: =2
+
+                    DataCardKey51 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue51 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey51.Y + DataCardKey51.Height + 5
+                        ZIndex: =2
+
+                "'Hard Drive_DataCard1' As typedDataCard.textualViewCard":
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_18"
+                    Default: =ThisItem.'Hard Drive'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_18")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =2
+                    Y: =4
+                    ZIndex: =2
+
+                    DataCardKey52 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue52 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey52.Y + DataCardKey52.Height + 5
+                        ZIndex: =2
+
+                Tools_DataCard1 As typedDataCard.textualViewCard:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="field_19"
+                    Default: =ThisItem.Tools
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"field_19")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =3
+                    Y: =4
+                    ZIndex: =2
+
+                    DataCardKey53 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue53 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey53.Y + DataCardKey53.Height + 5
+                        ZIndex: =2
+
+                Shop_DataCard1 As typedDataCard.textualViewCard:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="Shop"
+                    Default: =ThisItem.Shop
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@Equipment_List],DataSourceInfo.DisplayName,"Shop")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =341
+                    X: =0
+                    Y: =5
+                    ZIndex: =2
+
+                    DataCardKey54 As label:
+                        AutoHeight: =true
+                        Color: =RGBA(89, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        Size: =13
+                        Text: ="Location"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue54 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey54.Y + DataCardKey54.Height + 5
+                        ZIndex: =2
+
+            Container17 As groupContainer.horizontalAutoLayoutContainer:
+                FillPortions: =0
+                Height: =Button19.Height+5
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutGap: =20
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =2
+
+                Button19 As button:
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(164, 38, 44, 1)
+                    FontWeight: =FontWeight.Semibold
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+                    OnSelect: =Navigate(Maintenance_Request)
+                    Size: =15
+                    Text: ="Request Maintenance"
+                    Width: =12*Len(Button19.Text)
+                    ZIndex: =1
+
+                Button20 As button:
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(164, 38, 44, 1)
+                    FontWeight: =FontWeight.Semibold
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+                    Size: =15
+                    Text: ="Maintenance Records"
+                    Width: =12*Len(Button20.Text)
+                    ZIndex: =2
+

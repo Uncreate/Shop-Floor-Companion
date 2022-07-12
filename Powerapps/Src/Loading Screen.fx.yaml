@@ -1,0 +1,109 @@
+"'Loading Screen' As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+    Fill: =RGBA(234, 234, 234, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+    OnVisible: |-
+        =If(
+            tog_AutoLoad.Value,
+            Select(btn_Loading_Process)
+        )
+
+    ScreenContainer10 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer1_12 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =1
+
+            Label1_12 As label:
+                Align: =Center
+                AlignInContainer: =AlignInContainer.Stretch
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FillPortions: =1
+                FontWeight: =Bold
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =If('Loading Screen'.Size>2,"Essai Shop Floor Companion","Essai SFC")
+                ZIndex: =2
+
+            Icon2_12 As icon.Reload:
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(244, 244, 244, 1)
+                Icon: =Icon.Reload
+                OnSelect: =Refresh('Tool Request')
+                Visible: =VarManSelected=1.4
+                ZIndex: =5
+
+        MainSectionContainer9 As groupContainer.verticalAutoLayoutContainer:
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =5
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Image1 As image:
+                BorderColor: =RGBA(89, 0, 0, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Image: ='Double Ring-8.3s-200px'
+                ZIndex: =1
+
+            Label20 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Stretch
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Size: =13
+                Text: ="Checking App Version..."
+                ZIndex: =2
+
+            Label21 As label:
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Size: =13
+                Text: ="v"&varAppVersion
+                ZIndex: =3
+
+    btn_Loading_Process As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        OnSelect: |-
+            =If(
+                varAppVersion = LookUp(
+                    PowerApps_Ver,
+                    Title = "Shop Floor Companion",
+                    'Version_No.'
+                ),
+                Navigate(HomeScreen),
+                Navigate('Incorrect Version Screen')
+            )
+        Size: =15
+        Text: ="Load Data"
+        Visible: =false
+        X: =36
+        Y: =136
+        ZIndex: =2
+

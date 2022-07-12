@@ -1,0 +1,85 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =Set(
+            VarTabSelected,
+            1
+        );
+        Set(
+            VarManSelected,
+            1.1
+        );
+        Set(
+            varUser,
+            User().Email
+        );
+        Set(
+            varAppVersion,
+            "1.20"
+        );
+        Set(
+            varlocation,
+            Office365Users.MyProfile().City
+        );
+        ClearCollect(
+            colAdmin,
+            {email: "adam.riggs@advantest.com"}
+        );
+        ClearCollect(
+            colProg,
+            {email: "doug.hashier@advantest.com"},
+            {email: "michael.dodd@advantest.com"},
+            {email: "chuck.blesch@advantest.com"},
+            {email: "jordan.hammond@advantest.com"}
+        );
+        ClearCollect(
+            colTabs,
+            {
+                ID: 1,
+                Name: "Home",
+                Logo: Icon.Home,
+                Alt: "Home"
+            },
+            {
+                ID: 2,
+                Name: "Manufacturing",
+                Logo: Icon.Manufacture,
+                Alt: "Man"
+            },
+            {
+                ID: 3,
+                Name: "Programming",
+                Logo: Icon.ComputerDesktop,
+                Alt: "Prog"
+            },
+            {
+                ID: 4,
+                Name: "Quality",
+                Logo: Icon.Search,
+                Alt: "QA"
+            },
+            {
+                ID: 5,
+                Name: "Shipping & Recieving",
+                Logo: Icon.Transportation,
+                Alt: "Ship"
+            },
+            {
+                ID: 6,
+                Name: "Maintenance",
+                Logo: Icon.Tools,
+                Alt: "Main"
+            },
+            {
+                ID: 7,
+                Name: "IT",
+                Logo: Icon.Devices,
+                Alt: "IT"
+            }
+        );
+        ClearCollect(
+            colMaintenance,
+            Office365Groups.ListGroupMembers("3fce32d8-8b6a-40f6-8983-90e6d594f7a1").value.mail
+        );
+    StartScreen: =
+

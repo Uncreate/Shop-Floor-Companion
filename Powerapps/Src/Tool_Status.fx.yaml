@@ -1,0 +1,174 @@
+"Tool_Status As screen.'tabletAutoLayout_HeaderMainFooter_ver1.0'":
+    Fill: =RGBA(234, 234, 234, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+
+    ScreenContainer7 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer1_7 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =1
+
+            Icon3_6 As icon.Home:
+                AlignInContainer: =AlignInContainer.Stretch
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(244, 244, 244, 1)
+                Icon: =Icon.Home
+                OnSelect: =Navigate(HomeScreen,ScreenTransition.None)
+                ZIndex: =1
+
+            Label1_7 As label:
+                Align: =Center
+                AlignInContainer: =AlignInContainer.Stretch
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FillPortions: =1
+                FontWeight: =Bold
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =If(ScreenSize>2,"Essai Shop Floor Companion","Essai SFC")
+                ZIndex: =2
+
+            Icon2_7 As icon.Reload:
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(244, 244, 244, 1)
+                Icon: =Icon.Reload
+                OnSelect: =Refresh('Tool Request')
+                Visible: =VarManSelected=1.4
+                ZIndex: =5
+
+        MainSectionContainer6 As groupContainer.verticalAutoLayoutContainer:
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Gallery1_1 As gallery.galleryHorizontal:
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Items: |-
+                    =Filter(
+                        Choices('Tool Request'.Status),
+                        !(Value = "Archived")
+                    )
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =Parent.Width/CountRows(Gallery1_1.AllItems)
+                ZIndex: =1
+
+                Label3_1 As label:
+                    Align: =Center
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    Color: =White
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =Switch(ThisItem.Value,"New",Blue,"In Progress", Purple, "Closed", Green, "On Hold", Red, "Archived",Gray)
+                    FontWeight: =Bold
+                    OnSelect: =Select(Parent)
+                    Size: =13
+                    Text: =ThisItem.Value
+                    Width: =Parent.TemplateWidth
+                    ZIndex: =1
+
+                Gallery5_1 As gallery.variableTemplateHeightGallery:
+                    BorderColor: =RGBA(89, 0, 0, 1)
+                    Height: =Parent.Height*.94
+                    Items: |-
+                        =If(
+                            ThisItem.Value = "Closed",
+                            SortByColumns(
+                                Filter(
+                                    'Tool Request',
+                                    Status.Value = ThisItem.Value,
+                                    Created >= Now() - (24/24)
+                                ),
+                                "Created",
+                                Descending
+                            ),
+                            SortByColumns(
+                                Filter(
+                                    'Tool Request',
+                                    Status.Value = ThisItem.Value,
+                                    Created >= Now() - (24/24)
+                                ),
+                                "NeededBy",
+                                Ascending
+                            )
+                        )
+                    Layout: =Layout.Vertical
+                    OnSelect: =
+                    ShowScrollbar: =false
+                    TemplatePadding: =4
+                    TemplateSize: =280
+                    Width: =Parent.TemplateWidth*.9
+                    X: =(Parent.TemplateWidth-Self.Width)/2
+                    Y: =40
+                    ZIndex: =1
+
+                    Rectangle3_1 As rectangle:
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Fill: =RGBA(164, 38, 44, 1)
+                        Height: =11
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =120
+                        ZIndex: =1
+
+                    Label4_1 As label:
+                        Align: =Center
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FontWeight: =Bold
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingTop: =0
+                        Size: =16
+                        Text: =ThisItem.Title
+                        Width: =Parent.TemplateWidth
+                        ZIndex: =2
+
+                    Label6_1 As label:
+                        Align: =Center
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =ThisItem.'Machine Number'.Value
+                        Width: =Parent.TemplateWidth
+                        Y: =40
+                        ZIndex: =3
+
+                    Label7_1 As label:
+                        Align: =Center
+                        BorderColor: =RGBA(89, 0, 0, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =ThisItem.'Needed By'
+                        Width: =Parent.TemplateWidth
+                        Y: =80
+                        ZIndex: =4
+
